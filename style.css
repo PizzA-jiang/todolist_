@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-warm: #FDFBF7;
+    --card-bg: #FFFFFF;
+    --border-color: #E8E4DE;
+    --text-main: #4A443F;
+    --accent-sage: #9DBF9E;
+    --accent-clay: #D4A373;
+    --accent-dusty: #A2B9C8;
+    --accent-rose: #D8A7B1;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-warm);
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #E8E4DE;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #sidebar-container {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        z-index: 50;
+        width: 85%;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 1rem;
+        background: rgba(253, 251, 247, 0.95);
+        backdrop-filter: blur(12px);
+    }
+    #sidebar-container.sidebar-active {
+        left: 0;
+    }
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 100%;
+}
+
+.day-cell {
+    border-right: 1px solid #F2EFED;
+    border-bottom: 1px solid #F2EFED;
+}
+
+.day-cell:nth-child(7n) {
+    border-right: none;
+}
+
+input, select {
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.overlay-visible {
+    pointer-events: auto !important;
+}
+
+#calendar-tooltip {
+    background: rgba(74, 68, 63, 0.95);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 8px 12px;
+    line-height: 1.4;
+    max-width: 200px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+#fly-particle {
+    will-change: transform, opacity;
+}
+
+#stats-modal-container {
+    transition: opacity 0.3s ease;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}

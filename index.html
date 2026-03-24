@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiet - Warm Minimalist Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FDFBF7] text-[#4A443F] antialiased min-h-screen overflow-hidden">
+    <div id="root" class="h-screen flex flex-col md:flex-row p-3 md:p-6 gap-4 md:gap-6">
+        <!-- Sidebar: Filter & List -->
+        <aside id="sidebar-container" class="w-72 shrink-0 h-full flex flex-col"></aside>
+        
+        <!-- Main Area -->
+        <main class="flex-1 flex flex-col gap-4 md:gap-6 h-full overflow-hidden relative">
+            <!-- Quick Add Header -->
+            <header id="quick-add-container" class="shrink-0"></header>
+            
+            <!-- Calendar Section -->
+            <section class="flex-1 bg-white rounded-[2rem] border border-[#E8E4DE] shadow-sm relative overflow-hidden flex flex-col">
+                <div id="calendar-container" class="flex-1 overflow-hidden"></div>
+                
+                <!-- Overlay: Detail View -->
+                <div id="overlay-container" class="absolute inset-0 z-20 translate-y-full opacity-0 pointer-events-none flex flex-col p-2 sm:p-4 bg-white/80 backdrop-blur-md">
+                    <!-- Component injected by JS -->
+                </div>
+            </section>
+
+            <!-- Floating Stats Trigger -->
+            <div id="stats-trigger-container" class="fixed bottom-10 right-10 z-40"></div>
+        </main>
+    </div>
+
+    <!-- Stats Modal Overlay -->
+    <div id="stats-modal-container" class="fixed inset-0 z-50 pointer-events-none opacity-0 flex items-center justify-center p-4 bg-[#4A443F]/20 backdrop-blur-sm">
+        <!-- Component injected by JS -->
+    </div>
+
+    <!-- Particle for Animation -->
+    <div id="fly-particle" class="fixed pointer-events-none opacity-0 z-[60] w-4 h-4 bg-[#9DBF9E] rounded-full shadow-lg"></div>
+
+    <!-- Floating Tooltip -->
+    <div id="calendar-tooltip" class="fixed pointer-events-none text-white text-[10px] opacity-0 z-50 transition-opacity duration-300"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
